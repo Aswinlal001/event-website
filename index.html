@@ -4,401 +4,631 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GWANI 2026 - Ignite the Spark. Celebrate the Talent.</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Outfit:wght@400;700&display=swap"
+    <title>GWANI 2026 - Mar Ephraem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div id="particles-js" class="bg-particles"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <h2 class="loader-text">GWANI <span class="loader-year">2026</span></h2>
+            <div class="loader-ring"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Animated Background & Watermark -->
+    <div class="background-animation"></div>
+    <div class="watermark-logo">
+        <img src="assets/images/logo.png" alt="Mar Ephraem Logo Watermark">
+    </div>
 
     <!-- Navigation -->
     <header class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#home" class="logo">GWANI <span>'26</span></a>
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fas fa-bars"></i>
+        <div class="nav-container">
+            <a href="#" class="logo-wrapper">
+                <img src="assets/images/logo.png" alt="Logo" class="nav-logo"
+                    onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'><rect width=\'40\' height=\'40\' fill=\'%238B0000\'/><text x=\'50%\' y=\'50%\' fill=\'white\' font-size=\'14\' text-anchor=\'middle\' dy=\'.3em\'>ME</text></svg>'">
+                <span class="logo-text">GWANI <span>2026</span></span>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
             <nav class="nav-links" id="nav-links">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#events" class="nav-link">Events</a>
-                <a href="#schedule" class="nav-link">Schedule</a>
-                <a href="#gallery" class="nav-link">Gallery</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="#register" class="btn btn-outline nav-btn">Register Now</a>
+                <a href="#home" class="nav-item">Home</a>
+                <a href="#about" class="nav-item">About</a>
+                <a href="#competitions" class="nav-item">Competitions</a>
+                <a href="#contact" class="nav-item">Contact</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero section">
-        <div class="container hero-content hidden">
-            <div class="hero-badge">Mar Ephraem College of Engineering & Technology</div>
-            <h1 class="hero-title">GWANI <span>2026</span></h1>
-            <p class="tagline">"Ignite the Spark. Celebrate the Talent."</p>
-            <div class="hero-details">
-                <div class="detail-item">
-                    <i class="far fa-calendar-check"></i>
-                    <span>18th March 2026</span>
+    <section id="home" class="hero">
+        <div id="particles-container"></div>
+        <div class="hero-container">
+
+            <!-- Left Side Content -->
+            <div class="hero-left glass-panel fade-in seq-1">
+                <img src="assets/images/logo.png" alt="College Logo" class="hero-logo scale-in seq-2"
+                    onerror="this.style.display='none'">
+                <h1 class="hero-heading fade-in seq-3">Welcome to GWANI 2026</h1>
+
+                <div class="hero-content fade-in seq-4">
+                    <p class="typing-effect" id="hero-typing-text">
+                        With immense pride, Mar Ephraem College of Engineering and Technology welcomes you to GWANI
+                        2026. Rooted in values and academic brilliance, our intercollegiate fest is a grand platform
+                        celebrating excellence beyond boundaries.
+                    </p>
+                    <p id="hero-sub-text" style="opacity: 0; transition: opacity 1s ease;">
+                        A spectacular fusion of culture, intelligence, and competitive energy awaits. Step forward with
+                        confidence, embrace the thrill, and be part of this extraordinary celebration!
+                    </p>
                 </div>
-                <div class="detail-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Mar Ephraem Campus</span>
+
+                <div class="countdown-section fade-in seq-5">
+                    <p class="countdown-title">The Countdown Begins!</p>
+                    <div class="countdown-timer" id="countdown">
+                        <div class="time-box">
+                            <span class="time-val" id="days">00</span>
+                            <span class="time-label">Days</span>
+                        </div>
+                        <div class="time-box">
+                            <span class="time-val" id="hours">00</span>
+                            <span class="time-label">Hours</span>
+                        </div>
+                        <div class="time-box">
+                            <span class="time-val" id="mins">00</span>
+                            <span class="time-label">Mins</span>
+                        </div>
+                        <div class="time-box">
+                            <span class="time-val" id="secs">00</span>
+                            <span class="time-label">Secs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-action fade-in seq-6">
+                    <a href="#competitions" class="btn-glow btn-ripple">Explore Events</a>
                 </div>
             </div>
-            <div class="hero-actions">
-                <a href="#events" class="btn btn-primary btn-glow">Explore Events</a>
-                <a href="#register" class="btn btn-secondary">Register Now</a>
+
+            <!-- Right Side Decor -->
+            <div class="hero-right fade-in seq-3">
+                <div class="abstract-shape">
+                    <div class="orbit"></div>
+                    <div class="core-glow"></div>
+                </div>
             </div>
+
         </div>
-        <div class="scroll-indicator">
-            <p>Scroll Down</p>
-            <i class="fas fa-chevron-down scroll-anim"></i>
+
+        <!-- Wave Divider 1 -->
+        <div class="custom-shape-divider-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.23,0,147.22,25.2,216,40.6,263.12,51.13,313,58.74,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Competitions Section -->
+    <section id="competitions" class="competitions section-padding">
+        <div class="container">
+            <div class="section-title-wrapper scroll-anim fade-in">
+                <h2 class="ug-title">Competitions & Showcases</h2>
+                <div class="decor-line"></div>
+            </div>
+
+            <!-- UG Arena -->
+            <div class="arena-section">
+                <div class="arena-title-wrapper scroll-anim fade-in">
+                    <h3 class="arena-title">UG Arena – Rise. Compete. Shine.</h3>
+                </div>
+
+                <div class="ug-intro glass-box scroll-anim fade-in">
+                    <p>Hey UG champs, are you ready to show the world what you’re made of? GWANI 2026 is your
+                        playground,
+                        your battlefield, and your spotlight all in one! This is your chance to step beyond the
+                        classroom,
+                        break out of the ordinary, and unleash the extraordinary within you. Whether you’re a performer
+                        who
+                        owns the stage, a thinker bursting with ideas, a strategist who loves competition, or someone
+                        ready
+                        to try something new — this is your moment to rise and shine.</p>
+
+                    <p>Don’t wait for opportunities to come to you — create them. Don’t just watch the excitement — be
+                        the
+                        excitement. Compete with confidence, cheer for your friends, challenge your limits, and make
+                        memories that you’ll talk about long after the fest is over. Bring your energy, bring your
+                        passion,
+                        and most importantly, bring your courage.</p>
+
+                    <p>Mar Ephraem College of Engineering and Technology proudly welcomes you to be part of this
+                        incredible
+                        journey and looks forward to witnessing your talent light up the stage. Because at GWANI 2026,
+                        this
+                        isn’t just an event… it’s your story waiting to be written.</p>
+                </div>
+
+                <div class="ug-guidelines scroll-anim fade-in">
+                    <p class="guidelines-text"><strong>Preview the Guidelines Before You Participate 👇</strong></p>
+                    <button class="btn-glow btn-ripple btn-guidelines"
+                        onclick="openRulesModal('General Guidelines')">View
+                        General Guidelines</button>
+                </div>
+
+                <div class="ug-grid">
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-question-circle card-icon"></i>
+                        <h3>General Quiz</h3><button class="btn-rules" onclick="openRulesModal('General Quiz')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-map-marked-alt card-icon"></i>
+                        <h3>Treasure Hunt</h3><button class="btn-rules" onclick="openRulesModal('Treasure Hunt')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-music card-icon"></i>
+                        <h3>Folk Dance Group</h3><button class="btn-rules"
+                            onclick="openRulesModal('Folk Dance Group')">View Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-guitar card-icon"></i>
+                        <h3>Western Dance Group</h3><button class="btn-rules"
+                            onclick="openRulesModal('Western Dance Group')">View Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-image card-icon"></i>
+                        <h3>Poster Presentation</h3><button class="btn-rules"
+                            onclick="openRulesModal('Poster Presentation')">View Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-lightbulb card-icon"></i>
+                        <h3>Idea Pitching</h3><button class="btn-rules" onclick="openRulesModal('Idea Pitching')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-microphone card-icon"></i>
+                        <h3>Group Song</h3><button class="btn-rules" onclick="openRulesModal('Group Song')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-theater-masks card-icon"></i>
+                        <h3>Mime</h3><button class="btn-rules" onclick="openRulesModal('Mime')">View Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-paint-brush card-icon"></i>
+                        <h3>Face Painting</h3><button class="btn-rules" onclick="openRulesModal('Face Painting')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-camera card-icon"></i>
+                        <h3>Best Shot</h3><button class="btn-rules" onclick="openRulesModal('Best Shot')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-utensils card-icon"></i>
+                        <h3>Cook Without Fire</h3><button class="btn-rules"
+                            onclick="openRulesModal('Cook Without Fire')">View Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-file-alt card-icon"></i>
+                        <h3>Paper Presentation</h3><button class="btn-rules"
+                            onclick="openRulesModal('Paper Presentation')">View Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-gamepad card-icon"></i>
+                        <h3>Spot Games</h3><button class="btn-rules" onclick="openRulesModal('Spot Games')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-recycle card-icon"></i>
+                        <h3>Art from Waste</h3><button class="btn-rules" onclick="openRulesModal('Art from Waste')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-crown card-icon"></i>
+                        <h3>Bridal Parade</h3><button class="btn-rules" onclick="openRulesModal('Bridal Parade')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-hand-sparkles card-icon"></i>
+                        <h3>Mehandhi Designing</h3><button class="btn-rules"
+                            onclick="openRulesModal('Mehandhi Designing')">View Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-chart-line card-icon"></i>
+                        <h3>Master of Market</h3><button class="btn-rules"
+                            onclick="openRulesModal('Master of Market')">View Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-video card-icon"></i>
+                        <h3>Reels Making</h3><button class="btn-rules" onclick="openRulesModal('Reels Making')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-cut card-icon"></i>
+                        <h3>Aaari Artistry</h3><button class="btn-rules" onclick="openRulesModal('Aaari Artistry')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-carrot card-icon"></i>
+                        <h3>Vegetable Carving</h3><button class="btn-rules"
+                            onclick="openRulesModal('Vegetable Carving')">View Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-tshirt card-icon"></i>
+                        <h3>Fashion Show</h3><button class="btn-rules" onclick="openRulesModal('Fashion Show')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-seedling card-icon"></i>
+                        <h3>Floral Arrangement</h3><button class="btn-rules"
+                            onclick="openRulesModal('Floral Arrangement')">View Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-pencil-alt card-icon"></i>
+                        <h3>Pencil Sketch</h3><button class="btn-rules" onclick="openRulesModal('Pencil Sketch')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-award card-icon"></i>
+                        <h3>Mr & Mrs Gwani '26</h3><button class="btn-rules"
+                            onclick="openRulesModal('Mr & Mrs Gwani \'26')">View Rules</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PG Arena -->
+            <div class="arena-section mt-5">
+                <div class="arena-title-wrapper scroll-anim fade-in">
+                    <h3 class="arena-title">PG Arena – Lead. Influence. Excel.</h3>
+                </div>
+
+                <div class="ug-intro glass-box scroll-anim fade-in">
+                    <p>Hey PG scholars, this is your arena to lead, influence, and excel. GWANI 2026 invites you to move
+                        beyond participation and step into distinction. This is where advanced knowledge meets bold
+                        execution,
+                        where ideas are not just presented but defended, refined, and celebrated. Your experience,
+                        analytical
+                        thinking, and leadership abilities deserve a stage that matches your ambition — and this is it.
+                    </p>
+
+                    <p>Take this opportunity to challenge yourself, exchange perspectives, and compete with purpose. Let
+                        your
+                        confidence reflect your preparation, and let your performance reflect your potential.</p>
+
+                    <p>Mar Ephraem College of Engineering and Technology warmly welcomes you to contribute your
+                        expertise,
+                        elevate the standard of excellence, and make GWANI 2026 a true celebration of intellect,
+                        innovation,
+                        and achievement.</p>
+                </div>
+
+                <div class="ug-guidelines scroll-anim fade-in">
+                    <p class="guidelines-text"><strong>Choose Your Event. Read the Rules. Get Ready. 👇</strong></p>
+                    <button class="btn-glow btn-ripple btn-guidelines" onclick="openRulesModal('PG Guidelines')">View
+                        PG Guidelines</button>
+                </div>
+
+                <div class="ug-grid">
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-user-tie card-icon"></i>
+                        <h3>Best Manager</h3><button class="btn-rules" onclick="openRulesModal('Best Manager')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-briefcase card-icon"></i>
+                        <h3>Business Plan</h3><button class="btn-rules" onclick="openRulesModal('Business Plan')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-brain card-icon"></i>
+                        <h3>Business Quiz</h3><button class="btn-rules" onclick="openRulesModal('Business Quiz')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-bullhorn card-icon"></i>
+                        <h3>AD-ZAP</h3><button class="btn-rules" onclick="openRulesModal('AD-ZAP')">View Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-building card-icon"></i>
+                        <h3>Corporate Show</h3><button class="btn-rules" onclick="openRulesModal('Corporate Show')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-guitar card-icon"></i>
+                        <h3>Western Dance Group</h3><button class="btn-rules"
+                            onclick="openRulesModal('Western Dance Group')">View Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-coins card-icon"></i>
+                        <h3>Finance Game</h3><button class="btn-rules" onclick="openRulesModal('Finance Game')">View
+                            Rules</button>
+                    </div>
+                    <div class="ug-card glass-box scroll-anim fade-in"><i class="fas fa-chart-line card-icon"></i>
+                        <h3>Master of Market</h3><button class="btn-rules"
+                            onclick="openRulesModal('Master of Market')">View Rules</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Wave Divider 2 -->
+        <div class="custom-shape-divider-bottom" style="transform: rotate(180deg);">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.23,0,147.22,25.2,216,40.6,263.12,51.13,313,58.74,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about-section section-padding">
         <div class="container">
-            <div class="section-header hidden">
-                <h2 class="title">About <span>The Fest</span></h2>
-                <div class="line"></div>
-            </div>
+            <!-- Top Split Content -->
             <div class="about-grid">
-                <div class="about-text glass-card hidden fade-left">
-                    <h3>A Celebration of Excellence</h3>
-                    <p>GWANI 2026 is the premier inter-college cultural and technical fest hosted by Mar Ephraem College
-                        of Engineering and Technology. It brings together brilliant minds from various institutions to
-                        compete, collaborate, and celebrate.</p>
-                    <p>This year, we are hosting <strong>31 diverse events</strong> designed for both Under Graduate
-                        (UG) and Post Graduate (PG) students. Join us to make memories, display your creativity, and
-                        ignite the spark!</p>
-                </div>
-                <div class="about-stats glass-card hidden fade-right">
-                    <div class="stat-item">
-                        <h4 class="counter" data-target="31">0</h4>
-                        <p>Total Events</p>
-                    </div>
-                    <div class="stat-item">
-                        <h4 class="counter" data-target="2">0</h4>
-                        <p>Categories (UG & PG)</p>
-                    </div>
-                    <div class="stat-item">
-                        <h4 class="counter" data-target="1">0</h4>
-                        <p>Epic Day</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <!-- Left: Text Content -->
+                <div class="about-left scroll-anim fade-in">
+                    <h2 class="ug-title" style="text-align: left;">About GWANI <span
+                            style="color: var(--secondary-color);">2026</span></h2>
+                    <div class="decor-line" style="margin: 0 0 2rem 0;"></div>
 
-    <!-- Events Section -->
-    <section id="events" class="events section">
-        <div class="container">
-            <div class="section-header hidden">
-                <h2 class="title">Exciting <span>Events</span></h2>
-                <div class="line"></div>
-                <p class="subtitle">Choose your battleground and showcase your skills.</p>
-            </div>
+                    <div class="about-text glass-box">
+                        <p>GWANI 2026 is not just an intercollegiate fest; it is a <span class="highlight-gold">grand
+                                celebration</span> of intellect, innovation, and cultural brilliance hosted by Mar
+                            Ephraem College of Engineering and Technology.</p>
 
-            <div class="event-controls hidden">
-                <button class="filter-btn active" data-filter="ug">Under Graduate (UG)</button>
-                <button class="filter-btn" data-filter="pg">Post Graduate (PG)</button>
-            </div>
+                        <p>Bridging the gap between diverse disciplines, we provide a dynamic platform for students from
+                            both <span class="highlight-gold">Undergraduate and Postgraduate</span> streams to showcase
+                            their unique talents, competitive spirit, and leadership qualities.</p>
 
-            <div class="events-grid" id="events-grid">
-                <!-- Populated by JS -->
-            </div>
-        </div>
-    </section>
+                        <p>Step onto our stage, collaborate with like-minded peers, and experience a fest where <span
+                                class="highlight-gold">every challenge</span> represents an opportunity to shine.</p>
 
-    <!-- Schedule Section -->
-    <section id="schedule" class="schedule section">
-        <div class="container">
-            <div class="section-header hidden">
-                <h2 class="title">Event <span>Schedule</span></h2>
-                <div class="line"></div>
-                <p class="subtitle">18th March 2026 - Save the Date!</p>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item hidden">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <h3>08:30 AM</h3>
-                        <h4>Registration Desk Opens</h4>
-                        <p>Verify your details and collect your event tags.</p>
+                        <p class="highlight-gold"
+                            style="font-size: 1.15rem; margin-top: 1.5rem; border-left: 4px solid var(--secondary-color); padding-left: 15px;">
+                            More than 31 Events. 1000+ Participants. ₹1 Lakh in Prizes.</p>
                     </div>
                 </div>
-                <div class="timeline-item hidden">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <h3>09:30 AM</h3>
-                        <h4>Inaugural Ceremony</h4>
-                        <p>Grand opening of GWANI '26 accompanied by a cultural performance.</p>
-                    </div>
-                </div>
-                <div class="timeline-item hidden">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <h3>10:30 AM</h3>
-                        <h4>Events Commence (Phase 1)</h4>
-                        <p>Technical and non-technical events begin across various venues.</p>
-                    </div>
-                </div>
-                <div class="timeline-item hidden">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <h3>01:00 PM</h3>
-                        <h4>Lunch Break</h4>
-                        <p>Reboot and refresh at our food stalls.</p>
-                    </div>
-                </div>
-                <div class="timeline-item hidden">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <h3>02:00 PM</h3>
-                        <h4>Events Commence (Phase 2)</h4>
-                        <p>Final rounds and remaining events.</p>
-                    </div>
-                </div>
-                <div class="timeline-item hidden">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <h3>04:30 PM</h3>
-                        <h4>Valedictory & Prize Distribution</h4>
-                        <p>Honoring the winners and closing ceremony.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Registration Section -->
-    <section id="register" class="register section">
-        <div class="container">
-            <div class="section-header hidden">
-                <h2 class="title">Register <span>Now</span></h2>
-                <div class="line"></div>
-                <p class="subtitle">Secure your spot in GWANI '26.</p>
-            </div>
-
-            <div class="register-container glass-card hidden">
-                <form id="registration-form" class="form">
-                    <div class="form-group">
-                        <label for="name"><i class="fas fa-user"></i> Full Name</label>
-                        <input type="text" id="name" placeholder="John Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="college"><i class="fas fa-university"></i> College Name</label>
-                        <input type="text" id="college" placeholder="XYZ College of Engineering" required>
-                    </div>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
-                            <input type="email" id="email" placeholder="john@example.com" required>
+                <!-- Right: Visual Cards -->
+                <div class="about-right scroll-anim fade-in">
+                    <div class="glowing-circle"></div>
+                    <div class="feature-stack">
+                        <div class="feature-card glass-box">
+                            <i class="fas fa-calendar-star feature-icon"></i>
+                            <h4>31+ Events</h4>
                         </div>
-                        <div class="form-group">
-                            <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
-                            <input type="tel" id="phone" placeholder="+91 9876543210" pattern="[0-9]{10}" required>
+                        <div class="feature-card glass-box">
+                            <i class="fas fa-layer-group feature-icon"></i>
+                            <h4>UG & PG Categories</h4>
+                        </div>
+                        <div class="feature-card glass-box">
+                            <i class="fas fa-trophy feature-icon"></i>
+                            <h4>Intercollegiate Celebration</h4>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="category"><i class="fas fa-layer-group"></i> Category</label>
-                        <select id="category" required>
-                            <option value="" disabled selected>Select Category</option>
-                            <option value="ug">Under Graduate (UG)</option>
-                            <option value="pg">Post Graduate (PG)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="event-select"><i class="fas fa-trophy"></i> Choose Event</label>
-                        <select id="event-select" required disabled>
-                            <option value="" disabled selected>Please select a category first</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-glow btn-submit">
-                        <span>Submit Registration</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-
-                    <div id="form-message" class="form-message"></div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery section">
-        <div class="container">
-            <div class="section-header hidden">
-                <h2 class="title">Moments of <span>Glory</span></h2>
-                <div class="line"></div>
-                <p class="subtitle">A glimpse into our past events.</p>
-            </div>
-
-            <div class="gallery-grid hidden">
-                <div class="gallery-item">
-                    <div class="img-placeholder"><i class="fas fa-camera"></i>
-                        <p>Gallery Image 1</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="img-placeholder"><i class="fas fa-users"></i>
-                        <p>Gallery Image 2</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="img-placeholder"><i class="fas fa-music"></i>
-                        <p>Gallery Image 3</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="img-placeholder"><i class="fas fa-paint-brush"></i>
-                        <p>Gallery Image 4</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="img-placeholder"><i class="fas fa-microphone"></i>
-                        <p>Gallery Image 5</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="img-placeholder"><i class="fas fa-trophy"></i>
-                        <p>Gallery Image 6</p>
-                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="faq section">
-        <div class="container">
-            <div class="section-header hidden">
-                <h2 class="title">Got <span>Questions?</span></h2>
-                <div class="line"></div>
+            <!-- Bottom Data Counters -->
+            <div class="counter-grid mt-5" id="counter-section">
+                <!-- 31+ Events -->
+                <div class="counter-card glass-box scroll-anim fade-in">
+                    <span class="count-num" data-val="31">0</span><span class="count-plus">+</span>
+                    <p class="count-label">Events</p>
+                </div>
+                <!-- 2 Categories -->
+                <div class="counter-card glass-box scroll-anim fade-in">
+                    <span class="count-num" data-val="2">0</span>
+                    <p class="count-label">Categories (UG & PG)</p>
+                </div>
+                <!-- 1000+ Participants -->
+                <div class="counter-card glass-box scroll-anim fade-in">
+                    <span class="count-num" data-val="1000">0</span><span class="count-plus">+</span>
+                    <p class="count-label">Participants expected</p>
+                </div>
+                <!-- 1 Fest -->
+                <div class="counter-card glass-box scroll-anim fade-in">
+                    <span class="count-num" data-val="1">0</span>
+                    <p class="count-label">Grand Celebration</p>
+                </div>
             </div>
 
-            <div class="faq-container hidden">
-                <div class="faq-item glass-card">
-                    <div class="faq-question">
-                        <h3>Who can participate in GWANI '26?</h3>
-                        <i class="fas fa-plus"></i>
+            <!-- Prize Highlight Section -->
+            <div class="prize-section mt-5 scroll-anim fade-in">
+                <div class="prize-container glass-box">
+                    <i class="fas fa-trophy floating-trophy"></i>
+                    <h3 class="arena-title" style="margin-bottom: 1rem;">Win Big at GWANI 2026</h3>
+                    <div class="prize-amount-wrapper">
+                        <span class="prize-amount shine-effect">Total Cash Prize Worth ₹1,00,000+</span>
                     </div>
-                    <div class="faq-answer">
-                        <p>All Bonafide students from recognized Engineering, Arts & Science, and Management colleges
-                            can participate.</p>
-                    </div>
+                    <p class="prize-desc">At GWANI 2026, excellence deserves recognition. Across all events, winners
+                        will be awarded exciting cash prizes. Each event offers:</p>
+                    <ul class="prize-list">
+                        <li><strong>First Prize</strong> – ₹6,000</li>
+                        <li><strong>Second Prize</strong> – ₹3,000</li>
+                    </ul>
+                    <p class="prize-desc">With 31 events across UG and PG categories, the total prize pool crosses ₹1
+                        Lakh, making this celebration not just about participation — but about prestigious victory.</p>
                 </div>
-                <div class="faq-item glass-card">
-                    <div class="faq-question">
-                        <h3>Is there any registration fee?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Registration fee details will be updated shortly. You can register online to reserve your
-                            spot, and payment details will be communicated to your email.</p>
-                    </div>
+            </div>
+
+            <!-- Gallery Section -->
+            <div class="gallery-section mt-5 scroll-anim fade-in">
+                <div class="arena-title-wrapper scroll-anim fade-in">
+                    <h3 class="arena-title" style="margin-bottom: 0.5rem;">Moments from Our Campus</h3>
+                    <p class="gallery-subtitle">Energy. Passion. Excellence.</p>
                 </div>
-                <div class="faq-item glass-card">
-                    <div class="faq-question">
-                        <h3>Can I participate in multiple events?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, as long as the event timings do not clash. Please refer to the detailed schedule on the
-                            event day.</p>
-                    </div>
+
+                <!-- Gallery Filters -->
+                <div class="gallery-filters scroll-anim fade-in">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="cultural">Cultural</button>
+                    <button class="filter-btn" data-filter="academic">Academic</button>
+                    <button class="filter-btn" data-filter="management">Management</button>
                 </div>
-                <div class="faq-item glass-card">
-                    <div class="faq-question">
-                        <h3>Will accommodation be provided?</h3>
-                        <i class="fas fa-plus"></i>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="cultural" onclick="openLightbox('assets/images/1.jpg')">
+                        <img src="assets/images/1.jpg" alt="Moment 1"
+                            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'><rect width=\'400\' height=\'300\' fill=\'%231a0b2e\'/><text x=\'50%\' y=\'50%\' fill=\'%23f5b041\' font-size=\'20\' text-anchor=\'middle\' dy=\'.3em\'>Campus Moment</text></svg>'">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
-                    <div class="faq-answer">
-                        <p>Accommodation requests are handled on a case-by-case basis for outstation participants.
-                            Please contact the organizers directly for arrangements.</p>
+                    <div class="gallery-item" data-category="cultural" onclick="openLightbox('assets/images/2.jpg')">
+                        <img src="assets/images/2.jpg" alt="Moment 2"
+                            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'><rect width=\'400\' height=\'300\' fill=\'%231a0b2e\'/><text x=\'50%\' y=\'50%\' fill=\'%23f5b041\' font-size=\'20\' text-anchor=\'middle\' dy=\'.3em\'>Campus Moment</text></svg>'">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" data-category="academic" onclick="openLightbox('assets/images/3.jpg')">
+                        <img src="assets/images/3.jpg" alt="Moment 3"
+                            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'><rect width=\'400\' height=\'300\' fill=\'%231a0b2e\'/><text x=\'50%\' y=\'50%\' fill=\'%23f5b041\' font-size=\'20\' text-anchor=\'middle\' dy=\'.3em\'>Campus Moment</text></svg>'">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" data-category="management" onclick="openLightbox('assets/images/4.jpg')">
+                        <img src="assets/images/4.jpg" alt="Moment 4"
+                            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'><rect width=\'400\' height=\'300\' fill=\'%231a0b2e\'/><text x=\'50%\' y=\'50%\' fill=\'%23f5b041\' font-size=\'20\' text-anchor=\'middle\' dy=\'.3em\'>Campus Moment</text></svg>'">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact-section section-padding">
         <div class="container">
-            <div class="section-header hidden">
-                <h2 class="title">Get In <span>Touch</span></h2>
-                <div class="line"></div>
+            <div class="section-title-wrapper scroll-anim fade-in">
+                <h2 class="ug-title">Contact & Coordinators</h2>
+                <div class="decor-line"></div>
             </div>
 
-            <div class="contact-wrap glass-card hidden">
-                <div class="contact-info">
-                    <div class="c-item">
-                        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div>
-                            <h4>Address</h4>
-                            <p>Mar Ephraem College of Engineering and Technology,<br>Malankara Hills, Elavuvilai,
-                                Marthandam, Tamil Nadu.</p>
-                        </div>
-                    </div>
-                    <div class="c-item">
-                        <div class="icon"><i class="fas fa-phone-alt"></i></div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 (000) 000-0000</p>
-                            <p>+91 (000) 000-0000</p>
-                        </div>
-                    </div>
-                    <div class="c-item">
-                        <div class="icon"><i class="fas fa-envelope"></i></div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@marephraem.edu.in</p>
-                            <p>gwani26@marephraem.edu.in</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+            <div class="ug-intro glass-box scroll-anim fade-in">
+                <p>If you have any questions about the events or need clarification on any details, our team is here to
+                    help! You can reach out to our staff or connect with student coordinators — their contact
+                    information is provided below. Don’t hesitate to get in touch; we’re happy to guide you and ensure
+                    your participation is smooth and enjoyable.</p>
+            </div>
+
+            <!-- Staff Coordinator -->
+            <div class="arena-section mt-5">
+                <div class="arena-title-wrapper scroll-anim fade-in">
+                    <h3 class="arena-title">Staff Coordinator</h3>
                 </div>
-                <div class="contact-map"
-                    style="position: relative; overflow: hidden; border-radius: 10px; height: 100%; min-height: 300px;">
-                    <iframe src="https://maps.google.com/maps?q=8.278953,77.220085&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                        width="100%" height="100%" style="border:0; position: absolute; top:0; left:0;"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                <div class="contact-grid">
+                    <div class="contact-card glass-box scroll-anim fade-in">
+                        <h4>Dr. R. Melba Kani <span class="designation">(HOD MBA)</span></h4>
+                        <p class="role">Staff Coordinator</p>
+                        <a href="tel:9442988239" class="contact-number"><i class="fas fa-phone-alt"></i> 9442988239</a>
+                    </div>
+                    <div class="contact-card glass-box scroll-anim fade-in">
+                        <h4>Mrs. Rexlin Beaula R <span class="designation">(AP/MBA)</span></h4>
+                        <a href="tel:9444307915" class="contact-number"><i class="fas fa-phone-alt"></i> 9444307915</a>
+                    </div>
                 </div>
             </div>
+
+            <!-- Student Coordinators -->
+            <div class="arena-section mt-5">
+                <div class="arena-title-wrapper scroll-anim fade-in">
+                    <h3 class="arena-title">Student Coordinators</h3>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-card glass-box scroll-anim fade-in">
+                        <h4>Ms. Lathika <span class="designation">(II MBA)</span></h4>
+                        <a href="tel:9944262309" class="contact-number"><i class="fas fa-phone-alt"></i> 9944262309</a>
+                    </div>
+                    <div class="contact-card glass-box scroll-anim fade-in">
+                        <h4>Mrs. Fenetlin Rethna <span class="designation">(I MBA)</span></h4>
+                        <a href="tel:8903831546" class="contact-number"><i class="fas fa-phone-alt"></i> 8903831546</a>
+                    </div>
+                    <div class="contact-card glass-box scroll-anim fade-in">
+                        <h4>Ms. E. F. Effersha <span class="designation">(IV ECE)</span></h4>
+                        <a href="tel:8438837177" class="contact-number"><i class="fas fa-phone-alt"></i> 8438837177</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Coordinators -->
+            <div class="arena-section mt-5">
+                <div class="arena-title-wrapper scroll-anim fade-in">
+                    <h3 class="arena-title">Event Coordinators</h3>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-card glass-box scroll-anim fade-in">
+                        <h4>Mr. Bibinston <span class="designation">(I MBA)</span></h4>
+                        <a href="tel:9360028168" class="contact-number"><i class="fas fa-phone-alt"></i> 9360028168</a>
+                    </div>
+                    <div class="contact-card glass-box scroll-anim fade-in">
+                        <h4>Ms. Dharshini <span class="designation">(I MBA)</span></h4>
+                        <a href="tel:7358509699" class="contact-number"><i class="fas fa-phone-alt"></i> 7358509699</a>
+                    </div>
+                    <div class="contact-card glass-box scroll-anim fade-in">
+                        <h4>Mr. Sanjay <span class="designation">(IV Mech)</span></h4>
+                        <a href="tel:8870237946" class="contact-number"><i class="fas fa-phone-alt"></i> 8870237946</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h2>GWANI <span>'26</span></h2>
-                    <p>Ignite the Spark. Celebrate the Talent.</p>
-                </div>
-                <p>&copy; 2026 Mar Ephraem College of Engineering and Technology. All Rights Reserved.</p>
-                <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+    <!-- Footer System (Enhanced) -->
+    <footer class="footer-section">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <a href="#" class="logo-wrapper">
+                    <img src="assets/images/logo.png" alt="Logo" class="nav-logo"
+                        onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'><rect width=\'40\' height=\'40\' fill=\'%238B0000\'/><text x=\'50%\' y=\'50%\' fill=\'white\' font-size=\'14\' text-anchor=\'middle\' dy=\'.3em\'>ME</text></svg>'">
+                    <span class="logo-text">GWANI <span>2026</span></span>
+                </a>
+                <p class="footer-desc">Mar Ephraem College of Engineering & Technology.</p>
+                <div class="social-icons">
+                    <a href="https://www.marephraem.edu.in/" class="social-link btn-ripple" target="_blank"><i
+                            class="fas fa-globe"></i></a>
+                    <a href="https://www.instagram.com/marephraem.edu.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        class="social-link btn-ripple" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/school/marephraem-college/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnLsxTd7axok4we3Ab8z-DqZji6o5JZ0SCHQ58csAScRbh9hdMp0iYJ6FCI0g_aem_eNb_Mh4pDFkTcbmO8viOKQ"
+                        class="social-link btn-ripple" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#competitions">Events</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mar Ephraem College of Engineering and Technology. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- College Location Map -->
+    <div class="map-section mt-5 scroll-anim fade-in">
+        <div class="glass-box" style="padding: 1.5rem;">
+            <h3 class="arena-title" style="margin-bottom: 1.5rem; font-size: 1.6rem; text-align: left;">Find Us
+                Here</h3>
+            <div class="map-container"
+                style="border-radius: 12px; overflow: hidden; height: 350px; border: 1px solid var(--glass-border);">
+                <iframe
+                    src="https://maps.google.com/maps?q=Mar%20Ephraem%20College%20of%20Engineering%20%26%20Technology,%20Marthandam&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="modal-overlay">
+        <span class="close-modal" id="close-lightbox" style="font-size: 40px; top: 20px; right: 40px;">&times;</span>
+        <div class="lightbox-nav btn-prev" id="lightbox-prev"><i class="fas fa-chevron-left"></i></div>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-nav btn-next" id="lightbox-next"><i class="fas fa-chevron-right"></i></div>
+    </div>
+
+    <!-- Rules Modal -->
+    <div id="rules-modal" class="modal-overlay">
+        <div class="modal-content glass-box">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2 id="modal-title" class="modal-title">Event Rules</h2>
+            <div class="modal-body" id="modal-body">
+                <!-- Rules will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="btn-ripple" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="js/script.js"></script>
 </body>
