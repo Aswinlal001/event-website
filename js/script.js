@@ -1,17 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* --- Preloader --- */
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                preloader.classList.add('fade-out');
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 500);
-            }, 800); // 800ms initial delay for aesthetics
-        });
-    }
+
 
     /* --- Scroll Tracking (Performant rAF Loop) --- */
     const scrollProgress = document.getElementById('scroll-progress');
