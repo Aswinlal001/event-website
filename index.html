@@ -14,60 +14,6 @@
             --font-main: 'Outfit', sans-serif;
         }
 
-        body {
-            font-family: var(--font-main);
-            cursor: none !important;
-        }
-
-        a,
-        button,
-        .ug-card,
-        .btn-ripple {
-            cursor: none !important;
-        }
-
-        /* Advanced glowing cursor */
-        .cursor-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--secondary-color);
-            position: fixed;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 9999;
-            pointer-events: none;
-            transition: width 0.2s, height 0.2s, background-color 0.2s;
-        }
-
-        .cursor-outline {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(245, 176, 65, 0.5);
-            position: fixed;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 9998;
-            pointer-events: none;
-            transition: transform 0.15s ease-out, width 0.2s, height 0.2s;
-        }
-
-        .hovering .cursor-dot {
-            transform: translate(-50%, -50%) scale(1.5);
-            background-color: var(--primary-color);
-        }
-
-        .hovering .cursor-outline {
-            width: 60px;
-            height: 60px;
-            border-color: var(--primary-color);
-            background: rgba(139, 0, 0, 0.1);
-        }
-
-        /* Advanced Hero Gradient */
         .hero-heading {
             background-image: linear-gradient(270deg, #ffffff, var(--secondary-color), var(--primary-color), #ffffff);
             background-size: 300% 300%;
@@ -174,9 +120,8 @@
 
                 <div class="hero-content fade-in seq-4">
                     <p class="typing-effect" id="hero-typing-text">
-                        Mar Ephraem College warmly welcomes you to Gwani '26, a National Level Techno Management Fest
-                        celebrating
-                        excellence beyond boundaries.
+                        Mar Ephraem College warmly welcomes you to <b>Gwani '26</b>, a <b>National Level Techno
+                            Management Fest</b> — celebrating excellence beyond boundaries.
                     </p>
                     <p id="hero-sub-text" style="opacity: 0; transition: opacity 1s ease;">
                         Step forward with confidence, embrace the thrill, and be part of this extraordinary celebration!
@@ -583,7 +528,7 @@
 
                         <p class="highlight-gold"
                             style="font-size: 1.15rem; margin-top: 1.5rem; border-left: 4px solid var(--secondary-color); padding-left: 15px;">
-                            More than 30 Events. 1000+ Participants. ₹1.6 Lakhs in Prizes.</p>
+                            More than 30 Events. 1500+ Participants. ₹1.6 Lakhs in Prizes.</p>
                     </div>
                 </div>
 
@@ -604,7 +549,7 @@
                 </div>
                 <!-- 1000+ Participants -->
                 <div class="counter-card glass-box scroll-anim fade-in">
-                    <span class="count-num" data-val="1000">0</span><span class="count-plus">+</span>
+                    <span class="count-num" data-val="1500">0</span><span class="count-plus">+</span>
                     <p class="count-label">Participants expected</p>
                 </div>
                 <!-- 1 Fest -->
@@ -766,11 +711,10 @@
                 <div class="contact-grid">
                     <div class="contact-card glass-box scroll-anim fade-in">
                         <h4>Dr. R. Melba Kani <span class="designation">(HOD MBA)</span></h4>
-                        <p class="role">Staff Coordinator</p>
                         <a href="tel:9442988239" class="contact-number"><i class="fas fa-phone-alt"></i> 9442988239</a>
                     </div>
                     <div class="contact-card glass-box scroll-anim fade-in">
-                        <h4>Mrs. Rexlin Beaula R <span class="designation">(AP/MBA)</span></h4>
+                        <h4>Mrs. R. Rexlin Beaula<span class="designation">(AP/MBA)</span></h4>
                         <a href="tel:9444307915" class="contact-number"><i class="fas fa-phone-alt"></i> 9444307915</a>
                     </div>
                 </div>
@@ -787,7 +731,7 @@
                         <a href="tel:9944262309" class="contact-number"><i class="fas fa-phone-alt"></i> 9944262309</a>
                     </div>
                     <div class="contact-card glass-box scroll-anim fade-in">
-                        <h4>Mrs. Fenetlin Rethna <span class="designation">(I MBA)</span></h4>
+                        <h4>Mrs. Fenitline Retna <span class="designation">(I MBA)</span></h4>
                         <a href="tel:8903831546" class="contact-number"><i class="fas fa-phone-alt"></i> 8903831546</a>
                     </div>
                     <div class="contact-card glass-box scroll-anim fade-in">
@@ -891,41 +835,7 @@
     <!-- Back to Top Button -->
     <button id="back-to-top" class="btn-ripple" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- Custom Cursor DOM -->
-    <div class="cursor-dot" id="cursor-dot"></div>
-    <div class="cursor-outline" id="cursor-outline"></div>
-
     <script src="js/script.js"></script>
-    <script>
-        // Advanced Cursor Tracking
-        const cursorDot = document.getElementById("cursor-dot");
-        const cursorOutline = document.getElementById("cursor-outline");
-        let curX = 0, curY = 0, ptX = 0, ptY = 0;
-
-        window.addEventListener("mousemove", function (e) {
-            curX = e.clientX;
-            curY = e.clientY;
-            cursorDot.style.left = curX + "px";
-            cursorDot.style.top = curY + "px";
-        });
-
-        // Smooth follower for outline
-        function animateCursor() {
-            ptX += (curX - ptX) * 0.2;
-            ptY += (curY - ptY) * 0.2;
-            cursorOutline.style.left = ptX + "px";
-            cursorOutline.style.top = ptY + "px";
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-
-        // Add hovering effects
-        const interactiveElements = document.querySelectorAll('a, button, .ug-card, .btn-ripple, .gallery-item');
-        interactiveElements.forEach(el => {
-            el.addEventListener("mouseenter", () => { document.body.classList.add("hovering"); });
-            el.addEventListener("mouseleave", () => { document.body.classList.remove("hovering"); });
-        });
-    </script>
 </body>
 
 </html>
