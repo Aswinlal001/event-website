@@ -160,7 +160,7 @@ a {
 }
 
 .logo-text {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 800;
   color: var(--text-main);
   letter-spacing: 1px;
@@ -1300,7 +1300,7 @@ a {
 .contact-number {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--primary-color);
+  color: #ffffff;
   margin-top: 0.5rem;
   display: inline-flex;
   align-items: center;
